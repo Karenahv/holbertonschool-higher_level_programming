@@ -39,7 +39,6 @@ listint_t *insert_node(listint_t **head, int number)
 			new = insert_nodeint_at_index(head, idx, number);
 			flag = 1;
 			return (new);
-			break;
 		}
 	}
 	if (flag == 0)

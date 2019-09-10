@@ -16,4 +16,4 @@ if number < 0:
     if last_digit != 0:
         print("Last digit of", number, "is", last_digit * -1, string)
     else:
-        print("Last digit of", number, "is", last_digit * -1, "and is 0")
+        print("Last digit of", number, "is", last_digit, "and is 0")

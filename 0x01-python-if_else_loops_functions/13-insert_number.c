@@ -12,14 +12,20 @@ listint_t *insert_node(listint_t **head, int number)
 {
 
 	listint_t *current = NULL;
+	listint_t *current2 = NULL;
 	int idx = 0;
+	int j, flag = 0;
 	struct listint_s *new = NULL;
 
 	current = *head;
+	current2 = *head;
+
 	if (head == NULL)
-		return NULL;
+		return (NULL);
 	if (current == NULL)
 		new = add_nodeint(head, number);
+	for (j = 0; current2 != NULL; j++)
+		current2 = current2->next;
 	while (current != NULL)
 	{
 
@@ -30,10 +36,13 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		else
 		{
-			new = insert_nodeint_at_index(head, idx, number);
+			add_nodeint_end(head, number);
+			flag = 1;
 			break;
 		}
 	}
+	if (flag == 0)
+		new = insert_nodeint_at_index(head, idx, number);
 	return (new);
 }
 

@@ -16,6 +16,8 @@ listint_t *insert_node(listint_t **head, int number)
 	struct listint_s *new = NULL;
 
 	current = *head;
+	if (head == NULL)
+		return NULL;
 	if (current == NULL)
 		new = add_nodeint(head, number);
 	while (current != NULL)

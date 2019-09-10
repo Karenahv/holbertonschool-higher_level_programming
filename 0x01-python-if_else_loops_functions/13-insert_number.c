@@ -15,8 +15,9 @@ listint_t *insert_node(listint_t **head, int number)
 	int idx = 0;
 	struct listint_s *new = NULL;
 
-
 	current = *head;
+	if (current == NULL)
+		new = add_nodeint(head, number);
 	while (current != NULL)
 	{
 
@@ -82,4 +83,25 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (count == 0)
 		return (NULL);
 	return (new);
+}
+
+/**
+ * add_nodeint - add the first node in a linked lis_t list.
+ *@head: Address of first element of the list
+ *@n: integer
+ * Return: the address of the new element, or NULL if it failed.
+ */
+listint_t *add_nodeint(listint_t **head, const int n)
+{
+
+	struct listint_s *temp = NULL;
+
+	temp = (struct listint_s *)malloc(sizeof(struct listint_s));
+	if (temp == NULL)
+		return (NULL);
+	temp->n = n;
+	temp->next = *head;
+	*head = temp;
+	return (temp);
+
 }

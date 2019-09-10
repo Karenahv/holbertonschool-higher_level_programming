@@ -36,13 +36,14 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		else
 		{
-			add_nodeint_end(head, number);
+			new = insert_nodeint_at_index(head, idx, number);
 			flag = 1;
+			return (new);
 			break;
 		}
 	}
 	if (flag == 0)
-		new = insert_nodeint_at_index(head, idx, number);
+		new = add_nodeint_end(head, number);
 	return (new);
 }
 

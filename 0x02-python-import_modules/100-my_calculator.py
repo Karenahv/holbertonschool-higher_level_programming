@@ -7,13 +7,13 @@ if __name__ == "__main__":
     list1 = ['+', '-', '*', '/']
     list2 = [add, sub, mul, div]
     i = 0
-    a = int(listargs[1])
-    b = int(listargs[3])
     flag = 0
 
     if numofargs != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
+    a = int(listargs[1])
+    b = int(listargs[3])
     for operator in list1:
         if operator == listargs[2]:
             print("{} {} {} = {}".format(a, list1[i], b, list2[i](a, b)))

@@ -29,7 +29,8 @@ class Square:
                     str1 += " "
                 for j in range(self.__size):
                     str1 += "#"
-                str1 += '\n'
+                if i is not (self.__size - 1):
+                    str1 += '\n'
         return (str1)
 
     @property

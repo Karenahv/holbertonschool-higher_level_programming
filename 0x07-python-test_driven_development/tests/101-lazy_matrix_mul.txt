@@ -1,0 +1,39 @@
+Tests for ``matrix_mul`` from 100-matrix_mul.py
+=======================================================
+
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+    >>> print(matrix_mul(matrix1))
+    Traceback (most recent call last):
+    TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+    >>> matrix2 = [[1, 2], [2, 3]]
+    >>> matrix1 = [[1, 2], [2, 3]]
+    >>> print(matrix_mul(matrix1, matrix2))
+    [[5, 8], [8, 13]]
+    >>> matrix1 = [[1, 2]]
+    >>> matrix2 = [[1, 2], [2, 3]]
+    >>> print(matrix_mul(matrix1, matrix2))
+    [[5, 8]]
+    >>> matrix1 = [[1, 2], [2, 3]]
+    >>> matrix2 = [[1, 2]]
+    >>> print(matrix_mul(matrix1, matrix2))
+    Traceback (most recent call last):
+    IndexError: m_a and m_b can't be multiplied
+    >>> matrix1 = [[1, 2], [2, 3]]
+    >>> print(matrix_mul(matrix1))
+    Traceback (most recent call last):
+    TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+    >>> matrix1 = [[1, -2, 3], [2, -4, 3], [1, 7, 3]]
+    >>> matrix2 = [[1, -2, 3], [2, -4, 3], [1, 7, 3]]
+    >>> print(matrix_mul(matrix1, matrix2))
+    [[0, 27, 6], [-3, 33, 3], [18, -9, 33]]
+    >>> matrix1 = [[1, -2], [2, -4], [1, 2]]
+    >>> matrix2 = [[1, -2], [2, -4], [1, 7]]
+    >>> print(matrix_mul(matrix1, matrix2))
+    Traceback (most recent call last):
+    IndexError: m_a and m_b can't be multiplied
+    >>> matrix1 = [[1, -2], [2, -4]]
+    >>> matrix2 = [[1, -2], [2, -8], [1, 2, 3]]
+    >>> print(matrix_mul(matrix1, matrix2))
+    Traceback (most recent call last):
+    TypeError: each row of m_b must be of the same size

@@ -1,0 +1,24 @@
+Tests for ``text_identation`` from 5-text_identation.py
+=======================================================
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+    >>> print(text_indentation('hola'))
+    holaNone
+    >>> print(text_indentation('hola.'))
+    hola
+    <BLANKLINE>
+    None
+    >>> print(text_indentation('hola?'))
+    hola
+    <BLANKLINE>
+    None
+    >>> print(text_indentation('hola:'))
+    hola
+    <BLANKLINE>
+    None
+    >>> print(text_indentation(2))
+    Traceback (most recent call last):
+    TypeError: text must be a string
+    >>> print(text_indentation('h'))
+    hNone

@@ -1,0 +1,27 @@
+Tests for ``add`` from 0-add_integer.py
+========================================
+
+``add`` from the ``0-add_integer`` module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+    >>> print (add_integer(6, 3))
+    9
+    >>> print (add_integer(0, 3))
+    3
+    >>> print (add_integer('s', 3))
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    >>> print (add_integer(None, None))
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    >>> print (add_integer(0, None))
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+    >>> print (add_integer(0, "hola"))
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+    >>> print(add_integer(-2, 8))
+    6
+    >>> print(add_integer(0, 0))
+    0

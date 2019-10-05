@@ -3,9 +3,6 @@ Tests for ``matrix_mul`` from 100-matrix_mul.py
 
     >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
 
-    >>> print(matrix_mul(matrix1))
-    Traceback (most recent call last):
-    TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
     >>> matrix2 = [[1, 2], [2, 3]]
     >>> matrix1 = [[1, 2], [2, 3]]
     >>> print(matrix_mul(matrix1, matrix2))

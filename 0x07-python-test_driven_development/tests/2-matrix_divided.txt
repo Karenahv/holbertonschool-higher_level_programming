@@ -8,9 +8,6 @@ Tests for ``matrix_divided`` from 2-matrix_divided.py
     TypeError: matrix must be a matrix (list of lists) of integers/floats
     >>> print(matrix_divided([[1,2,3], [1,2,3]], 3))
     [[0.33, 0.67, 1.0], [0.33, 0.67, 1.0]]
-    >>> print(matrix_divided([[1,2,3], ['a',2,3]], 3))
-    Traceback (most recent call last):
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
     >>> print(matrix_divided([[1,2,3], [1.8,2,3]], 3))
     [[0.33, 0.67, 1.0], [0.6, 0.67, 1.0]]
     >>> print(matrix_divided([[1,2,3], [1.8,2,3,4]], 3))

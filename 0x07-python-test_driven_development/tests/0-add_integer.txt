@@ -25,3 +25,41 @@ Tests for ``add`` from 0-add_integer.py
     6
     >>> print(add_integer(0, 0))
     0
+    >>> print(add_integer(1.8, 10))
+    11
+    >>> print(add_integer(1.8, 8))
+    9
+    >>> print(add_integer(0))
+    98
+    >>> print(add_integer(0, 0))
+    0
+    >>> print(add_integer(0, -200))
+    -200
+    >>> print(add_integer(0, None))
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+    >>> print(add_integer('1', None))
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    >>> print(add_integer('1', 0))
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    >>> print(add_integer())
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+    >>> print(add_integer(1))
+    99
+    >>> print(add_integer('a'))
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    >>> print(add_integer(1.8, 2.3))
+    3
+    >>> print(add_integer(1.8, float("inf")))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+    >>> print(add_integer(1.8, float("nan")))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+    >>> print(add_integer(1.8, float("nan")))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer

@@ -1,0 +1,45 @@
+Tests for ``base_geometry`` from 7-base_geometry.py
+========================================
+
+``base_geometry`` from the ``7-base_geometry`` module:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> baseg = BaseGeometry()
+    >>> type(baseg) == BaseGeometry
+    True
+    >>> baseg.__class__.area()
+    Traceback (most recent call last):
+    TypeError: area() missing 1 required positional argument: 'self'
+    >>> baseg.__class__.area(5)
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+    >>> baseg.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    >>> baseg.integer_validator("name", 8)
+    >>> baseg.integer_validator("name", "a")
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+    >>> baseg.integer_validator("name", 5.0)
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+    >>> baseg.integer_validator("name", None)
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+    >>> baseg.integer_validator("name", [1])
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+    >>> baseg.integer_validator("name", 0)
+    Traceback (most recent call last):
+    ValueError: name must be greater than 0
+    >>> baseg.integer_validator("name", -5)
+    Traceback (most recent call last):
+    ValueError: name must be greater than 0
+    >>> baseg.integer_validator("", 10)
+    >>> baseg.integer_validator(None, 10)
+    >>> baseg.integer_validator(None, -2)
+    Traceback (most recent call last):
+    ValueError: None must be greater than 0
+    >>> baseg.integer_validator("name", True)
+    Traceback (most recent call last):
+    TypeError: name must be an integer

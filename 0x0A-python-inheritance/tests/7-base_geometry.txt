@@ -43,3 +43,10 @@ Tests for ``base_geometry`` from 7-base_geometry.py
     >>> baseg.integer_validator("name", True)
     Traceback (most recent call last):
     TypeError: name must be an integer
+    >>> baseg.integer_validator("age", 4,)
+    >>> baseg.integer_validator("age", (4,))
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+    >>> baseg.integer_validator("age", {3, 4})
+    Traceback (most recent call last):
+    TypeError: age must be an integer

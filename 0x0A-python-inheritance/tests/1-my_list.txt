@@ -35,3 +35,15 @@ Tests for ``my_list`` from 0-my_list.py
     [2, 20]
     >>> list1.print_sorted()
     [2, 20]
+    >>> list1 = MyList()
+    >>> list1.append(10)
+    >>> list1.append(2)
+    >>> list1.append(5)
+    >>> list1.append(11)
+    >>> list1.append(30)
+    >>> list1
+    [10, 2, 5, 11, 30]
+    >>> list1.print_sorted()
+    [2, 5, 10, 11, 30]
+    >>> print(list1)
+    [10, 2, 5, 11, 30]

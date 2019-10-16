@@ -21,3 +21,17 @@ Tests for ``my_list`` from 0-my_list.py
     [-500, -10, 2, 2]
     >>> list1.__class__.print_sorted([-10, -500, 2, 0])
     [-500, -10, 0, 2]
+    >>> list1 = MyList()
+    >>> list1.print_sorted()
+    []
+    >>> list1.print_sorted([10, 3, 8])
+    Traceback (most recent call last):
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
+    >>> list1.append(2)
+    >>> print(list1)
+    [2]
+    >>> list1.append(20)
+    >>> print(list1)
+    [2, 20]
+    >>> list1.print_sorted()
+    [2, 20]

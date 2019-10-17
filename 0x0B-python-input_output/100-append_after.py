@@ -3,11 +3,13 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    numoflines = 1
+    numoflines = 0
     list1 = []
     indices = []
-    with open(filename, mode="r", encoding="utf-8") as f:
+    flag = 0
+    with open(filename, encoding="utf-8") as f:
         contenido = f.readlines()
+        f.seek(0)
         while True:
             line = f.readline()
             if not line:
@@ -16,9 +18,11 @@ def append_after(filename="", search_string="", new_string=""):
             list1 = line.split()
             for word in list1:
                 if search_string in word:
-                    indices.append(numoflines)
-    contenido.insert(numoflines + 1, new_string)
-
+                    if flag == 0:
+                        contenido.insert(numoflines, new_string)
+                        flag = 1
+                    else:
+                        contenido.insert(numoflines + 1, new_string)
     with open(filename, mode="w", encoding="utf-8") as f:
         contenido = "".join(contenido)
         f.write(contenido)

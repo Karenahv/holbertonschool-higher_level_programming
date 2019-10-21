@@ -10,6 +10,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
+
 class TestBase(unittest.TestCase):
     def setUp(self):
         """ create instances of Base"""
@@ -53,7 +54,9 @@ class TestBase(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
-        self.assertNotEqual(json_dictionary, '[{"width": 10, "height": 7, "x": 2, "y": 8, "id": 3}]')
+        self.assertNotEqual(json_dictionary, '[{"width": 10, "height": 7,\
+        "x": 2, "y": 8, "id": 3}]')
+
     def test_save_to_file(self):
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
@@ -65,7 +68,6 @@ class TestBase(unittest.TestCase):
         self.assertTrue(path.isfile('Rectangle.json'))
         self.assertTrue(path.isfile('Square.json'))
 
-       #None
         contenido3 = []
         Base.save_to_file(None)
         with open("Base.json", encoding="utf-8") as Myfile2:
@@ -74,7 +76,6 @@ class TestBase(unittest.TestCase):
         j3_string = []
         self.assertEqual(contenido3_dict, j3_string)
 
-        #empty
         contenido4 = []
         Base.save_to_file("")
         with open("Base.json", encoding="utf-8") as Myfile3:
@@ -95,7 +96,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(type(list_output[0]), dict)
         self.assertEqual(type(json_list_input), str)
 
-        #Empty or none argument
         list1 = []
         self.assertEqual(list1, Base.from_json_string(None))
 
@@ -115,7 +115,7 @@ class TestBase(unittest.TestCase):
         Rectangle.save_to_file(listentry)
         list_out = Rectangle.load_from_file()
         self.assertNotEqual(id(listentry[0]), id(list_out[0]))
-        self.assertEqual(str(listentry[1]), str(list_out[1]))
+        self.assertEqual(str(listentry[1]), '[Rectangle] (4) 0/0 - 2/4')
 
         s100 = Square(5)
         s200 = Square(7, 9, 1)
@@ -123,8 +123,8 @@ class TestBase(unittest.TestCase):
         Square.save_to_file(listentry2)
         list_out = Square.load_from_file()
         self.assertNotEqual(id(listentry2[0]), id(list_out[0]))
-        self.assertEqual(str(listentry2[0]), str(list_out[0]))
-        self.assertEqual(str(listentry2[1]), str(list_out[1]))
+        self.assertEqual(str(listentry2[0]), '[Square] (7) 0/0 - 5')
+        self.assertEqual(str(listentry2[1]), '[Square] (8) 9/1 - 7')
 
     if __name__ == '__main__':
         unittest.main()

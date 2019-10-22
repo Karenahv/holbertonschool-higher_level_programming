@@ -6,19 +6,24 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """ class Square"""
     def __init__(self, size, x=0, y=0, id=None):
+        """ class Square"""
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """ class Square"""
         return ("[Square] ({}) {}/{} - {}".format(self.id, self.x,
                 self.y, self.width))
 
     @property
     def size(self):
+        """ class Square"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """ class Square"""
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -27,6 +32,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """ class Square"""
         lenofargs = len(args)
         if lenofargs > 0:
             self.id = args[0]
@@ -51,6 +57,7 @@ class Square(Rectangle):
                     self.id = value
 
     def to_dictionary(self):
+        """ class Square"""
         dic1 = {}
         for key, value in self.__dict__.items():
             if 'x' in key:

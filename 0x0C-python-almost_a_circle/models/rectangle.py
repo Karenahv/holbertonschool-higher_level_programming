@@ -123,16 +123,6 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """class rectangle"""
-        dic1 = {}
-        for key, value in self.__dict__.items():
-            if 'x' in key:
-                dic1['x'] = value
-            if 'y' in key:
-                dic1['y'] = value
-            if 'id' in key:
-                dic1['id'] = value
-            if 'width' in key:
-                dic1['width'] = value
-            if 'height' in key:
-                dic1['height'] = value
+        dic1 = {"id": self.id, "width": self.__width, "height": self.__height,
+                "x": self.__x, "y": self.__y}
         return dic1

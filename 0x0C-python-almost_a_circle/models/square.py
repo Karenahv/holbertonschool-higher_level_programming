@@ -58,14 +58,6 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """ class Square"""
-        dic1 = {}
-        for key, value in self.__dict__.items():
-            if 'x' in key:
-                dic1['x'] = value
-            if 'y' in key:
-                dic1['y'] = value
-            if 'id' in key:
-                dic1['id'] = value
-            if 'width' in key:
-                dic1['size'] = value
-        return dic1
+        dic2 = {"id": self.id, "size": self.width,
+                "x": self.x, "y": self.y}
+        return dic2

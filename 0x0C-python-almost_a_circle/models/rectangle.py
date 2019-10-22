@@ -3,7 +3,6 @@
 
 
 from models.base import Base
-import sys
 
 
 class Rectangle(Base):

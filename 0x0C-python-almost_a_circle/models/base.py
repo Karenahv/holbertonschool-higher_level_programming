@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base:
@@ -66,3 +67,25 @@ class Base:
                         cls.from_json_string(json_string)]
         else:
             return (list1)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + '.csv'
+        csv_todict = [o.to_dictionary() for o in list_objs]
+        with open(filename, mode="w", encoding="utf-8") as f:
+            dwriter = csv.DictWriter(f, csv_todict[0].keys())
+            dwriter.writeheader()
+            dwriter.writerows(csv_todict)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        obj_list = []
+        filename = cls.__name__ + '.csv'
+        with open(filename, mode="r", encoding="utf-8") as f:
+            dreader = csv.DictReader(f)
+            for row in dreader:
+                t = {}
+                for key, value in dict(row).items():
+                    t[key] = int(value)
+                obj_list.append(cls.create(**t))
+        return(obj_list)

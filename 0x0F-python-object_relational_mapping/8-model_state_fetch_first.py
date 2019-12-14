@@ -14,8 +14,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    try:
-        print(session.query(State).first())
-    except:
-        print("\n")
+    query = session.query(State).first()
+    if query:
+        print(query)
+    else:
+        print("Nothing")
     session.close()

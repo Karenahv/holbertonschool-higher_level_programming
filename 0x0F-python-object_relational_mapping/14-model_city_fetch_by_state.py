@@ -19,4 +19,5 @@ if __name__ == "__main__":
         City.state_id == State.id).order_by(City.id).all()
     for s, c in rows:
         print("{}: ({}) {}".format(s.name, c.id, c.name))
+    session.commit()
     session.close()

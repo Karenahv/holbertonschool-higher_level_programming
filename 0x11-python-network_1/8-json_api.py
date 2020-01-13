@@ -9,7 +9,7 @@ if __name__ == "__main__":
         listargs = sys.argv
         values = {'q': listargs[1]}
     else:
-        data = {}
+        data = {'q': ""}
     try:
         req = requests.post(url, data=values)
         data1 = req.json()

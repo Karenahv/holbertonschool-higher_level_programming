@@ -6,4 +6,4 @@ import sys
 if __name__ == "__main__":
     listargs = sys.argv
     req = requests.get(listargs[1])
-    print(req.headers['X-Request-Id'])
+    print(req.headers.get('X-Request-Id'))

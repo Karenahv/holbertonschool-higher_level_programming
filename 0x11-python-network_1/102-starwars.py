@@ -23,7 +23,7 @@ if __name__ == "__main__":
         for n in data1.get("results"):
             print(n.get('name'))
             for film in n.get('films'):
-                print("\t {}".format(films.get(film)))
+                print("\t{}".format(films.get(film)))
         if data1.get('next'):
             req = requests.get(data1.get('next'))
             data1 = req.json()

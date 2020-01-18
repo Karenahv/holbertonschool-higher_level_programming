@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     search_headers = {
         'Authorization': 'Bearer {}'.format(access_token)
-   }
+    }
     search_params = {
         'q': sys.argv[3],
         'result_type': 'recent',
@@ -37,8 +37,10 @@ if __name__ == "__main__":
 
     search_url = '{}1.1/search/tweets.json'.format(base_url)
 
-    search_resp = requests.get(search_url, headers=search_headers, params=search_params)
+    search_resp = requests.get(search_url, headers=search_headers,
+                               params=search_params)
     tweet_data = search_resp.json()
 
     for tweet in tweet_data['statuses']:
-        print(tweet.get('text'))
+        print("[{}] {} by {}".format(tweet['id'], tweet['text'],
+                                     tweet['user']['name']))

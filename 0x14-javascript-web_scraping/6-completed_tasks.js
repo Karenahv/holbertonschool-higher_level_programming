@@ -15,7 +15,9 @@ myRequest(myUrl, function (err, res, body) {
         const user = jsonBody[i].userId;
         if (jsonBody[i].completed === true && userant === user) {
           count = count + 1;
-          dict1[jsonBody[i].userId] = count;
+          if (count > 0) {
+            dict1[jsonBody[i].userId] = count;
+          }
         }
       }
       userant = jsonBody[j].userId;

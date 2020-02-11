@@ -11,7 +11,7 @@ myRequest(myUrl, function (err, res, body) {
     for (let i = 0; i < jsonBody.length; i++) {
       const chars = jsonBody[i].characters;
       for (let j = 0; j < chars.length; j++) {
-        if (chars[j].search("/18/") > 0) {
+        if (chars[j].search('/18/') > 0) {
           count = count + 1;
         }
       }

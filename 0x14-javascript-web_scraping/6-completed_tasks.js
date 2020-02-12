@@ -9,7 +9,7 @@ myRequest(myUrl, function (err, res, body) {
     let count = 0;
     const dict1 = {};
     const jsonBody = JSON.parse(body);
-    if (jsonBody) {
+    if (jsonBody != null) {
       let userant = jsonBody[0].userId;
       for (let j = 1; j < jsonBody.length; j++) {
         for (let i = 0; i < jsonBody.length; i++) {
